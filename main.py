@@ -34,10 +34,10 @@ SNOWFLAKE_COLOR = (255, 255, 255)
 SNOWFLAKE_COUNT = 90
 SNOWFLAKE_WIDTH = 25
 SNOWFLAKE_HEIGHT = 25
-SNOWFLAKE_DIRECTION: Direction = Direction.UP
+SNOWFLAKE_DIRECTION: Direction = Direction.DOWN
 SNOWFLAKE_VELOCITY = 5
 SNOWFLAKE_ROTATIONS = True
-SNOWFLAKE_ROTATION_SPEED = 30
+SNOWFLAKE_ROTATION_SPEED = 3
 
 
 def check_tuple(
@@ -193,7 +193,7 @@ class Game:
                 if SNOWFLAKE_ROTATIONS:
                     rotated_snowflake = pygame.transform.rotate(
                         self.transformed_snowflake,
-                        self.angle
+                        -self.angle
                     )
                     self.angle += self.rotation_speed
                     rotated_rect = rotated_snowflake.get_rect(center=snowflake)
